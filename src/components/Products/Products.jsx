@@ -1,15 +1,10 @@
 import React from "react"
 import { useShoppingCart } from "use-shopping-cart"
 import products from "../../../functions/create-checkout/data/products.json"
+import { formatCurrencyString } from "use-shopping-cart/src/util"
 
 const Products = () => {
-  const { addItem } = useShoppingCart()
-  const format = (price, currency) =>
-    new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency,
-    }).format((price / 100).toFixed(2))
-
+  const { addItem, removeItem, decrementItem } = useShoppingCart()
   return (
     <section>
       {products.map(product => (
@@ -17,13 +12,33 @@ const Products = () => {
           <img src={product.image} alt={product.name} />
           <h2>{product.name}</h2>
           <p>{product.description}</p>
-          <p>{format(product.price, product.currency)}</p>
+          <p>
+            {formatCurrencyString({
+              value: product.price,
+              currency: product.currency,
+            })}
+          </p>
+
           <button
             type="button"
             className="btn-black"
             onClick={() => addItem(product)}
           >
             Add To Cart
+          </button>
+          <button
+            type="button"
+            className="btn-black"
+            onClick={() => removeItem(product.sku)}
+          >
+            Remove all: <b>{product.name}</b>
+          </button>
+          <button
+            type="button"
+            className="btn-black"
+            onClick={() => decrementItem(product.sku)}
+          >
+            Remove one: <b>{product.name}</b>
           </button>
         </div>
       ))}
