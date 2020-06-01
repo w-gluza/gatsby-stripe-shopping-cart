@@ -1,0 +1,13 @@
+{
+  "name": "create-checkout",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Sugarly Designs",
+  "license": "MIT",
+  "dependencies": {
+    "stripe": "^8.49.0",
+    "use-shopping-cart": "^2.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

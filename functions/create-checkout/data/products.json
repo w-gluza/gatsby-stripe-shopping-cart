@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Map",
+    "description": "Gouda paneer who moved my cheese. Cheese triangles red leicester cheese strings macaroni cheese cow cut the cheese caerphilly edam.",
+    "sku": "MDT23503",
+    "price": 7000,
+    "currency": "USD",
+    "image": "https://picsum.photos/200"
+  },
+  {
+    "name": "Compass",
+    "description": "Swiss paneer rubber cheese blue castello mozzarella babybel paneer red leicester. Fromage frais melted cheese.",
+    "sku": "MXR23503",
+    "price": 3500,
+    "currency": "USD",
+    "image": "https://picsum.photos/220"
+  },
+  {
+    "name": "Notebook",
+    "description": "Bavarian bergkase queso mascarpone caerphilly hard cheese say cheese queso feta. Hard cheese chalk and cheese macaroni cheese.",
+    "sku": "MGH23503",
+    "price": 1500,
+    "currency": "USD",
+    "image": "https://picsum.photos/210"
+  }
+]
