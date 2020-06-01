@@ -15,7 +15,7 @@ exports.handler = async event => {
       },
       line_items: [...line_items],
       success_url:
-        "hhttps://affectionate-williams-d35a52.netlify.app/success?session_id={CHECKOUT_SESSION_ID}",
+        "https://affectionate-williams-d35a52.netlify.app/success?session_id={CHECKOUT_SESSION_ID}",
       cancel_url: "https://affectionate-williams-d35a52.netlify.app/cancel",
     })
     return {
