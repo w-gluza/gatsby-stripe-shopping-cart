@@ -1,0 +1,4 @@
+[build]
+  command = "pushd functions/create-checkout && npm install && popd && gatsby build"
+  functions = "functions"
+  publish = "public"
