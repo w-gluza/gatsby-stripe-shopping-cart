@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-stripe-shopping-cart",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A simple starter for Gatsby eCommerce",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Wiola Gluza <wiolagluza@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.21.37",
+    "@stripe/stripe-js": "^1.5.0",
+    "gatsby": "2.21.22",
     "gatsby-image": "^2.4.4",
     "gatsby-plugin-manifest": "^2.4.5",
     "gatsby-plugin-offline": "^3.2.3",
@@ -14,9 +15,11 @@
     "gatsby-source-filesystem": "^2.3.4",
     "gatsby-transformer-sharp": "^2.5.2",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^6.0.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.0.0",
+    "stripe": "^8.49.0",
+    "use-shopping-cart": "^2.0.0"
   },
   "devDependencies": {
     "prettier": "2.0.5"
