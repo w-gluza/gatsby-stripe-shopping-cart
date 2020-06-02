@@ -1,47 +1,25 @@
 import React from "react"
-import { useShoppingCart } from "use-shopping-cart"
 import products from "../../../functions/create-checkout/data/products.json"
-import { formatCurrencyString } from "use-shopping-cart/src/util"
+import ProductCard from "../ProductCard/ProductCard"
 
 const Products = () => {
-  const { addItem, removeItem, decrementItem } = useShoppingCart()
   return (
     <section>
-      {products.map(product => (
-        <div key={product.sku}>
-          <img src={product.image} alt={product.name} />
-          <h2>{product.name}</h2>
-          <p>{product.description}</p>
-          <p>
-            {formatCurrencyString({
-              value: product.price,
-              currency: product.currency,
-            })}
-          </p>
-
-          <button
-            type="button"
-            className="btn-black"
-            onClick={() => addItem(product)}
-          >
-            Add To Cart
-          </button>
-          <button
-            type="button"
-            className="btn-black"
-            onClick={() => removeItem(product.sku)}
-          >
-            Remove all: <b>{product.name}</b>
-          </button>
-          <button
-            type="button"
-            className="btn-black"
-            onClick={() => decrementItem(product.sku)}
-          >
-            Remove one: <b>{product.name}</b>
-          </button>
-        </div>
-      ))}
+      <h2>Travelers shop</h2>
+      <section className="products-container">
+        {products.map(product => (
+          <ProductCard
+            key={product.sku}
+            sku={product.sku}
+            productName={product.name}
+            description={product.description}
+            price={product.price}
+            currency={product.currency}
+            image={product.image}
+            product={product}
+          />
+        ))}
+      </section>
     </section>
   )
 }

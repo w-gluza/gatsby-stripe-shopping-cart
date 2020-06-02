@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@100;300;400;500;700&family=Shadows+Into+Light&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  border: none;
+  background-color: transparent;
+  font-style: normal;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Sarabun", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+p {
+  font-size: 14px;
+}
+
+/* buttons */
+
+button,
+.btn {
+  padding: 1rem 0.8rem;
+  color: #ffffff;
+  border-radius: 6px;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-black {
+  background-color: #0d0a0b;
+}
+
+.btn-black-outlined {
+  border: 1px solid #0d0a0b;
+  color: #0d0a0b;
+}
+
+.btn-gray {
+  background-color: #eef0f2;
+  border: 1px solid #eef0f2;
+  color: #0d0a0b;
+}
+
+/* Products */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* ProductCard */
+
+.product-card {
+  border: 1px solid #d1d1d1;
+  max-width: 320px;
+  display: grid;
+  grid-template-rows: 6fr 4fr;
+  margin: 20px;
+}
+
+.card-content-container {
+  display: grid;
+  padding: 20px;
+  gap: 20px;
+}
+
+.card-header {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: space-between;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-action-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-self: end;
+  height: max-content;
+}

@@ -1,6 +1,7 @@
 import React from "react"
 import Store from "../components/Store/Store"
 import { Link } from "gatsby"
+import "../style/style.css"
 
 const IndexPage = () => (
   <>
