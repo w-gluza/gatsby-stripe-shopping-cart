@@ -4,9 +4,11 @@ import { useShoppingCart } from "use-shopping-cart"
 const Cart = () => {
   const {
     cartDetails,
-    cartCount,
     formattedTotalPrice,
     redirectToCheckout,
+    incrementItem,
+    decrementItem,
+    removeItem,
   } = useShoppingCart()
 
   const handleSubmit = async event => {
@@ -26,31 +28,51 @@ const Cart = () => {
   }
 
   return (
-    <div>
-      Things in the cart
-      <pre>{JSON.stringify({ cartDetails }, null, 2)}</pre>
-      <br />
-      <br />
-      <details>
-        <summary>
-          <b>Cart Summary ({cartCount})</b>
-        </summary>
-        <ul>
-          {Object.values(cartDetails).map(product => (
-            <li key={product.sku}>
-              {product.name} ({product.quantity}) — {product.formattedValue}
-            </li>
-          ))}
-        </ul>
-        <p>
-          <strong>Total Price: {formattedTotalPrice}</strong>
-        </p>
-      </details>
-      <br />
-      <br />
-      <button className="btn-success" onClick={handleSubmit}>
-        Check Out
-      </button>
+    <div className="cart">
+      <ul>
+        <div className="table-headers-container">
+          <span></span>
+          <p className="tb-header">Article</p>
+          <p className="tb-header">Quantity</p>
+          <p className="tb-header">Price</p>
+          <p className="tb-header">Actions</p>
+        </div>
+        {Object.values(cartDetails).map(product => (
+          <li key={product.sku} className="table-rows-container">
+            <img src={product.image} className="cart-img" alt={product.name} />
+            <p>{product.name}</p>
+            <div className="quantity-container">
+              <button
+                className="btn-quantity"
+                onClick={() => decrementItem(product.sku)}
+              >
+                -
+              </button>
+              <p>{product.quantity}</p>
+              <button
+                className="btn-quantity"
+                onClick={() => incrementItem(product.sku)}
+              >
+                +
+              </button>
+            </div>
+            <p>{product.formattedValue}</p>
+            <button
+              className="btn-delete"
+              onClick={() => removeItem(product.sku)}
+            >
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div className="cart-summary-container">
+        <button className="btn btn-black btn-checkout" onClick={handleSubmit}>
+          Check Out
+        </button>
+        <p className="price-total-value">{formattedTotalPrice}</p>
+        <p className="price-total-title">Total Price</p>
+      </div>
     </div>
   )
 }

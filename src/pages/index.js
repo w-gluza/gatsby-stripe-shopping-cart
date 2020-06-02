@@ -5,7 +5,6 @@ import "../style/style.css"
 
 const IndexPage = () => (
   <>
-    <p>Main page</p>
     <Store />
     <Link to="/page-2/">Go to page 2</Link> <br />
   </>

@@ -61,10 +61,24 @@ button,
   color: #0d0a0b;
 }
 
-.btn-gray {
-  background-color: #eef0f2;
-  border: 1px solid #eef0f2;
+/* Change is to real SVG */
+
+.btn-quantity {
+  background-color: #d1d1d1;
+  border-radius: 50%;
   color: #0d0a0b;
+  width: 21px;
+  height: 21px;
+  padding: 0px;
+}
+.btn-quantity:hover {
+  background-color: #2a9d8f;
+}
+
+.btn-delete {
+  width: max-content;
+  padding: 0px;
+  color: #dc481c;
 }
 
 /* Products */
@@ -108,4 +122,54 @@ button,
   gap: 20px;
   align-self: end;
   height: max-content;
+}
+
+/* Cart Component */
+.cart {
+  padding: 20px;
+  margin: 20px;
+}
+
+.table-headers-container,
+.table-rows-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 20px 0;
+  align-items: center;
+  border-bottom: 1px solid #0d0a0b;
+}
+
+.tb-header {
+  font-weight: 200;
+}
+
+.cart-img {
+  width: 50px;
+  height: 50px;
+}
+
+.quantity-container {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-summary-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  direction: rtl; /* starting grid from right to left */
+  align-items: center; /* starting grid from right to left */
+  justify-items: end; /* starting grid from right to left */
+  padding: 40px 0;
+}
+
+.price-total-title,
+.price-total-value {
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.btn-checkout {
+  min-width: 100%;
 }
